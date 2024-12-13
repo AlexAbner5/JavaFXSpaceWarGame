@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: javafx-spacewar
+    env: ubuntu
+    buildCommand: |
+      apt-get update
+      apt-get install -y openjdk-17-jdk maven
+    startCommand: mvn jpro:run
+    plan: free
