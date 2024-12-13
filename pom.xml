@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>SpaceWar</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>com.example.spacewar.SpaceWar</name>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <junit.version>5.10.2</junit.version>
+        <java.version>17</java.version>
+        <jpro.version>2024.4.1</jpro.version>
+        <javafx.version>23.0.1</javafx.version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>jpro-sandec</id>
+            <url>https://sandec.jfrog.io/artifactory/repo</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>jpro-sandec</id>
+            <url>https://sandec.jfrog.io/artifactory/repo</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-media</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.almasb</groupId>
+            <artifactId>fxgl</artifactId>
+            <version>17.3</version>
+        </dependency>
+        <dependency>
+            <groupId>one.jpro</groupId>
+            <artifactId>jpro-webapi</artifactId>
+            <version>${jpro.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+
+            <!-- Plugin para ejecutar JPro -->
+            <plugin>
+                <groupId>one.jpro</groupId>
+                <artifactId>jpro-maven-plugin</artifactId>
+                <version>${jpro.version}</version>
+                <configuration>
+                    <mainClassName>com.example.spacewar.SpaceWar</mainClassName>
+                </configuration>
+            </plugin>
+        </plugins>
+
+    </build>
+</project>
+
