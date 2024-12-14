@@ -12,7 +12,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <junit.version>5.10.2</junit.version>
-        <java.version>17</java.version>
+        <java.version>21</java.version>
         <jpro.version>2024.4.1</jpro.version>
         <javafx.version>23.0.1</javafx.version>
     </properties>
@@ -93,6 +93,15 @@
                 </configuration>
             </plugin>
         </plugins>
+
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*</include>
+                </includes>
+            </resource>
+        </resources>
 
     </build>
 </project>

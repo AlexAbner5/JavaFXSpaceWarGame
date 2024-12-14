@@ -72,7 +72,7 @@ public class SpaceWar extends Application {
     public void start(Stage stage) {
         // Musica de fondo
         backgroundMusic = new BackgroundMusic();
-        String musicPath = "file:/C:/Users/Losma/Documents/java-coen/SpaceWar/src/main/resources/Musica/vgertermshock4.wav";
+        String musicPath = getClass().getResource("/Musica/vgertermshock4.wav").toExternalForm();
         backgroundMusic.play(musicPath);
 
         // Crear el canvas
@@ -122,7 +122,8 @@ public class SpaceWar extends Application {
                 } else {
                     _shots.add(factory.createShot(player.posX + PLAYER_SIZE / 2, player.posY, false));
                 }
-                backgroundMusic.playSoundEffect("file:/C:/Users/Losma/Documents/java-coen/SpaceWar/src/main/resources/Musica/13.FighterShot1.mp3");
+                String musicPath2 = getClass().getResource("/Musica/13.FighterShot1.mp3").toExternalForm();
+                backgroundMusic.playSoundEffect(musicPath2);
             }
         });
 
